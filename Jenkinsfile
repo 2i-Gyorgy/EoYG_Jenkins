@@ -16,8 +16,8 @@ pipeline {
                 echo "Testing..."
                 bat '''
                 cd myapp
-                python3 hello.py
-                python3 hello.py --name=Gyorgy
+                python hello.py
+                python hello.py --name=Gyorgy
                 '''
             }
         }
