@@ -4,17 +4,17 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building.."
-                sh '''
+                bat '''
+                dir
                 cd myapp
-                python3 hello.py
-                python3 hello.py --name=Gyorgy
+                pip install -r requirements.txt
                 '''
             }
         }
         stage('Test') {
             steps {
                 echo "Testing..."
-                sh '''
+                bat '''
                 cd myapp
                 python3 hello.py
                 python3 hello.py --name=Gyorgy
@@ -24,7 +24,7 @@ pipeline {
         stage('Deliver') {
             steps {
                 echo 'Deliver....'
-                sh '''
+                bat '''
                 echo "doing delivery stuff.."
                 '''
             }
