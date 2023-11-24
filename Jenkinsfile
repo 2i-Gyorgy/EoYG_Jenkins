@@ -4,8 +4,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building.."
-                bat(cd myapp)
-                bat(pip install -r requirements.txt)
+                cmd_exec('cd myapp')
+                cmd_exec('pip install -r requirements.txt')
             }
         }
         stage('Test') {
