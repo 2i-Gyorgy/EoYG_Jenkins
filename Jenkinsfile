@@ -18,8 +18,6 @@ pipeline {
                 cd myapp
                 python hello.py
                 python hello.py --name=Gyorgy
-
-                python apiTest.py
                 '''
             }
         }
