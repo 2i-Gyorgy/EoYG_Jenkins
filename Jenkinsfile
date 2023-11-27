@@ -31,7 +31,7 @@ pipeline {
                     def statusCode = apiResponse.split("\n")[-1].trim()
 
                     // Check if the status code is 200 (OK)
-                    if (statusCode == "200") {
+                    if (statusCode == "Response 200") {
                         echo "API request successful"
                         // Add additional validation logic here if needed
                     } else {
