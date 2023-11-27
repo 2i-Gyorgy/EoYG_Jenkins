@@ -17,3 +17,6 @@ if api_response.status_code == 200:
 else:
     print(f"API request failed with status code {api_response.status_code}")
     # Handle the failure accordingly
+
+# print response
+print(api_response)
