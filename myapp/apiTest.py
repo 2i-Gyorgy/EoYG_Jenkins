@@ -5,7 +5,7 @@ def make_api_request(url):
     return response
 
 # Environment Agency Tide Gauge API - Station E70824 Leith
-api_url = "https://environment.data.gov.uk/flood-monitoring/id/stations/E70824/measures"
+api_url = "https://environment.data.gov.uk/flood-monitoring/id/stations/E704534824/measures"
 
 # Make API request
 api_response = make_api_request(api_url)
