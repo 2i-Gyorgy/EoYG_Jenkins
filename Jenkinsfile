@@ -28,10 +28,10 @@ pipeline {
                     def apiResponse = bat(script: 'python apiTest.py', returnStdout: true).trim()
 
                     // Parse the status code from the API response
-                    def statusCode = apiResponse.split("\n")[-1].trim()
+                    def statusCode = apiResponse.split("\n")[-1].trim().replaceAll("[^\\d]", '')
 
                     // Check if the status code is 200 (OK)
-                    if (statusCode == "<Response [200]>") {
+                    if (statusCode == "200") {
                         echo "API request successful"
                         // Add additional validation logic here if needed
                     } else {
