@@ -3,7 +3,7 @@ resources:
 https://www.jenkins.io/doc/book/installing/war-file/
 https://www.youtube.com/watch?v=6YZvp2GwT0A
 
-to Run follow these steps:
+to set up Jenkins and run it follow these steps:
 
 1. build docker image:
    `docker build -t jenkins .`
@@ -25,3 +25,28 @@ docker run --name jenkins --restart=on-failure --detach `
 5. visit http://localhost:8080 in a browser
 6. click install suggested plugins
 7. create user credentials and click through setup wizard
+
+Set up Nodes
+
+1. navigate to Dashboard -> Manage Jenkins -> Clouds
+2. install Docker extension, than restart
+3. in Clouds, create new docker cloud
+   but first we need a docker container:
+   `docker run -d --restart=always -p 127.0.0.1:2376:2375 --network jenkins -v /var/run/docker.sock:/var/run/docker.sock alpine/socat tcp-listen:2375,fork,reuseaddr unix-connect:/var/run/docker.sock`
+   and it's ip address:
+   `docker inspect <container_name>`
+   find and grab IP address and paste it as docker host ip: `tcp://<IPAddress>:2375`
+   Select 'enabled' than test connection
+4. under Dashboard -> Manage Jenkins -> Clouds -> docker -> Configure select 'Docker agent templates' and add template
+   'Label': docker-agent-pyhton
+   'Enabled' - Yes
+   'Name': docker-agent-pyhton
+   'Docker image': devopsjourney1/myjenkinsagents:python
+   'Instance Capacity': 2
+   'Remote File System Root': /home/jenkins
+   save
+
+Set up Pipeline
+
+1. create a jenkins pipeline
+2.
