@@ -49,4 +49,11 @@ Set up Nodes
 Set up Pipeline
 
 1. create a jenkins pipeline
-2.
+2. under Dashboard -> my_pipeline -> Configuration
+   Pipeline - Definition: select 'Pipeline script from SCM'
+   SCM: Git
+   Repositories - Repository URL: `https://github.com/2i-Gyorgy/EoYG_Jenkins`
+   Branches to build - Branch Specifier: `*/main`
+   Script Path: `JenkinsfileSh`
+   Save
+3. Build Now and enjoy
