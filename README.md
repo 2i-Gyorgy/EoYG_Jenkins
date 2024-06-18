@@ -35,7 +35,7 @@ Set up Nodes
    `docker run -d --restart=always -p 127.0.0.1:2376:2375 --network jenkins -v /var/run/docker.sock:/var/run/docker.sock alpine/socat tcp-listen:2375,fork,reuseaddr unix-connect:/var/run/docker.sock`
    and it's ip address:
    `docker inspect <container_name>`
-   find and grab IP address and paste it as docker host ip: `tcp://<IPAddress>:2375`
+   find and grab IP address and paste it as docker host uri: `tcp://<IPAddress>:2375`
    Select 'enabled' than test connection
 4. under Dashboard -> Manage Jenkins -> Clouds -> docker -> Configure select 'Docker agent templates' and add template
    'Label': docker-agent-pyhton
