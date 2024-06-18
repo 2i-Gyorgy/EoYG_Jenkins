@@ -6,10 +6,7 @@ pipeline {
                 echo "Building.."
                 sh '''
                 cd myapp
-                apt install python3.11-venv
-                python3 -m venv .venv
-                source .venv/bin/activate
-                python3 -m pip install -r requirements.txt
+                pip3.12 install fire --break-system-packages 
                 '''
             }
         }
