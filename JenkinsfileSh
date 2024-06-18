@@ -6,7 +6,7 @@ pipeline {
                 echo "Building.."
                 sh '''
                 cd myapp
-                pip3.12 install fire --break-system-packages 
+                pip install fire --break-system-packages 
                 '''
             }
         }
